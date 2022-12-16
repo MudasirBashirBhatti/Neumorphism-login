@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primar-col: rgb(238, 247, 255);
+    --text-primary: rgb(7, 54, 34);
+    --placholder: rgba(11, 71, 56, 0.774);
+    --text-secondry: rgba(3, 172, 172, 0.753);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+    background-color: var(--primar-col);
+}
+
+.parent {
+    width: 450px;
+    background-color: var(--primar-col);
+    padding: 2em 3.5em;
+    border-radius: 20px;
+    box-shadow:
+        5px 5px 10px rgba(0, 0, 0, 0.123),
+        -5px -5px 10px rgb(255, 255, 255);
+}
+
+h1 span {
+    color: var(--text-secondry);
+}
+
+.subheading {
+    padding: .4em 0em 1em;
+    color: var(--placholder);
+}
+
+.subheading a {
+    color: var(--text-secondry);
+    text-decoration: none;
+}
+
+input {
+    width: 100%;
+    padding: .7em;
+    border: none;
+    margin: .4em 0 .7em;
+    background-color: var(--primar-col);
+    border-radius: 50px;
+    outline: none;
+    caret-color: var(--text-secondry);
+    box-shadow:
+
+        4px 4px 4px rgba(0, 0, 0, 0.212) inset,
+        -4px -4px 4px rgb(255, 255, 255) inset;
+    color: var(--text-primary);
+}
+
+.checkbox {
+    font-size: .8rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .7em;
+}
+
+.checkbox input {
+    width: initial;
+}
+
+.checkbox a,
+.subheading a {
+    color: var(--text-secondry);
+    text-decoration: none;
+}
+
+.checkbox a,
+.subheading a {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.checkbox a::after,
+.subheading a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-secondry);
+    left: -100%;
+    bottom: 0px;
+    transition: .4s;
+}
+
+.checkbox a:hover::after,
+.subheading a:hover::after {
+    left: 0px;
+    bottom: 0px;
+}
+
+.mycheckbox {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border: 1px solid var(--text-secondry);
+    position: relative;
+    cursor: pointer;
+}
+
+.mycheckbox i {
+    font-size: 1.2rem;
+    position: absolute;
+    left: -1px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg) scale(3);
+    color: var(--text-secondry);
+    opacity: 0;
+    transition: .4s;
+}
+
+#customCheckbox {
+    display: none;
+}
+
+#customCheckbox:checked~.mycheckbox i {
+    opacity: 1;
+    transform: translateY(-50%) rotate(-10deg) scale(1);
+}
+
+.myHr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .78rem;
+    margin: 1em 0em;
+}
+
+.innerDiv {
+    height: 1px;
+    width: 43%;
+    background-color: var(--text-secondry);
+}
+
+.button-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    margin: 0em 0em 1em;
+    padding: .7em 0em;
+    width: 160px;
+    border: none;
+    color: var(--text-primary);
+    background-color: var(--primar-col);
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.103),
+        -5px -5px 5px rgba(255, 255, 255, 0.603);
+}
+
+@keyframes buttonAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-4px)
+    }
+
+    100% {
+        transform: translateY(0px)
+    }
+}
+
+button:hover {
+    animation: buttonAnimation 1s;
+}
+
+button:hover i {
+    animation: iAnim 1s;
+}
+
+@keyframes iAnim {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(30deg);
+    }
+
+    60% {
+        transform: rotate(-30deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+button:active {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.103) inset,
+        -5px -5px 5px rgba(255, 255, 255, 0.603) inset;
+}
+
+button i {
+    color: var(--text-secondry);
+}
