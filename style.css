@@ -12,16 +12,19 @@
 }
 
 body {
+    position: relative;
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: var(--text-primary);
     background-color: var(--primar-col);
+    overflow: auto;
 }
 
 .parent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     width: 450px;
     background-color: var(--primar-col);
     padding: 2em 3.5em;
@@ -217,4 +220,16 @@ button:active {
 
 button i {
     color: var(--text-secondry);
+}
+
+@media screen and (max-width:490px) {
+    .parent{
+        width: 90vw;
+        padding: 1em 4vw;
+    }
+    .button-grid div:nth-child(1){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
